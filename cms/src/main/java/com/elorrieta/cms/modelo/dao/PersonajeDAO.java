@@ -16,14 +16,11 @@ public class PersonajeDAO {
 	public static ArrayList<Personaje> filtrar(String palabraBusqueda) {
 
 		ArrayList<Personaje> coleccion = new ArrayList<Personaje>();
-		String sql = " SELECT id, nombre avatar FROM personaje "
-				+ " WHERE nombre LIKE ? OR apellidos LIKE ? or email LIKE ? " + " ORDER BY id ASC; ";
+		String sql = " SELECT id, nombre avatar FROM personaje " + " WHERE nombre LIKE ? " + " ORDER BY id ASC; ";
 
 		try (Connection con = ConnectionHelper.getConnection(); PreparedStatement pst = con.prepareStatement(sql)) {
 
 			pst.setString(1, "%" + palabraBusqueda + "%");
-			pst.setString(2, "%" + palabraBusqueda + "%");
-			pst.setString(3, "%" + palabraBusqueda + "%");
 
 			try (ResultSet rs = pst.executeQuery()) { // lanza la consulta SQL y obtiene Resultados RS
 
@@ -35,13 +32,9 @@ public class PersonajeDAO {
 					// cogemos los valores de las columnas
 					int colId = rs.getInt("id");
 					String colNombre = rs.getString("nombre");
-					String colApellidos = rs.getString("apellidos");
 
 					p.setId(colId);
 					p.setNombre(colNombre);
-					p.setApellidos(colApellidos);
-					p.setEmail(rs.getString("email"));
-					p.setAvatar(rs.getString("avatar"));
 
 					// a�adir objeto al ArrayList
 					coleccion.add(p);
