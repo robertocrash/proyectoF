@@ -1,0 +1,56 @@
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+main.container {
+	margin-bottom: 40vh;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    margin-bottom: 1.5rem !important;
+}
+
+form {
+    margin: auto; /* centra en horizontal */
+}
+
+footer {
+    position: absolute;  /* poscionar el pie abajo del todo */
+    bottom: 0;
+    width: 100%;
+}
+
+footer a, footer p {
+    color: #FFF !important;
+}
+
+footer a:hover {
+    color: rgb(231, 165, 58) !important;
+}
+
+footer li {
+    list-style: none;   /* quitar el puntito a los LIs en las listas */
+    margin-right: 10px;
+}
+
+footer .info {
+    width: 70%;
+}
+footer .rrss {
+    width: 30%;
+} 
+
+
+.row .coltest {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(9, 48, 87, 0.397);
+    border: 1px solid rgba(12, 62, 112, 0.883);
+}
+
+.avatar {
+	width: 75px;
+    height: 75px;
+    border-radius: 100%;
+}
