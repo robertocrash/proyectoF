@@ -35,11 +35,9 @@ Para realizar la conexión a la bbdd cambiar el siguiente fichero **src\main\jav
 Solo debemos cambiar la siguiente variable con la ruta de la bbdd 
 
 `
-private static final String DIRECCION_BBDD = "jdbc:sqlite:C:\\desarrolloJava\\workspace\\cms\\cms.db";
+private static final String DIRECCION_BBDD = "jdbc:sqlite:C:\\desarrolloJava\\workspace\\cms\\personajes.db";
 `
 
-
-![entidad relacion]( screenshot2.jpg?raw=true)
 
 
 
