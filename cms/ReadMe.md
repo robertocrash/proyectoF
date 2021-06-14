@@ -38,7 +38,7 @@ Solo debemos cambiar la siguiente variable con la ruta de la bbdd
 private static final String DIRECCION_BBDD = "jdbc:sqlite:C:\\desarrolloJava\\workspace\\cms\\personajes.db";
 `
 
-
+https://github.com/robertocrash/proyectoF/blob/master/cms/Captura2.PNG
 
 
 ## Ejecutar Proyecto
