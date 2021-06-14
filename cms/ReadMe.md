@@ -53,7 +53,7 @@ Tenemos un rol de administrador:
 
 
 #### UI para usuario administrador:
-![UI para usuario administrador]( screenshot3.jpg?raw=true)
+![UI para usuario administrador]( https://github.com/robertocrash/proyectoF/blob/master/cms/Captura3.PNG)
 
 
 
