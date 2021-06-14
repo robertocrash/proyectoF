@@ -32,10 +32,16 @@ public class PersonajesListarController extends HttpServlet {
 		if (filtro == null) {
 			lista = PersonajeDAO.getAll();
 		} else {
-			request.setAttribute("filtro", filtro);
-			request.setAttribute("personajes", lista);
-			request.getRequestDispatcher("personajes.jsp?page=personajes").forward(request, response);
+			lista = PersonajeDAO.filtrar(filtro);
+
 		}
+
+		// DRY Dont Repeat Yourself
+
+		request.setAttribute("filtro", filtro);
+		request.setAttribute("personajes", lista);
+		request.getRequestDispatcher("personajes.jsp?page=personajes").forward(request, response);
+
 	}
 
 	/**

@@ -29,17 +29,14 @@
          <c:if test="${usuario_logeado.rol == 2 }">
 	         <li class="nav-item">
 	           <a class="nav-link ${ (param.page eq 'participantes') ? 'active' : '' }" 
-	              href="backoffice/participantes-listar">Participantes</a>
+	              href="backoffice/personajes-listar">Personajes</a>
 	         </li>
 	         <li class="nav-item">
 	           <a class="nav-link ${ (param.page eq 'formulario') ? 'active' : '' }" 
-	              href="backoffice/formulario.jsp?page=formulario">Crear Participante</a>
+	              href="backoffice/personajes-editar?id=0">Crear Personaje</a>
 	         </li>
 	         
-	           <li class="nav-item">
-	           <a class="nav-link" 
-	              href="backoffice/perros">Perros</a>
-	         </li>
+	          
          </c:if>
          
          <!-- visible solo para NORMAL -->

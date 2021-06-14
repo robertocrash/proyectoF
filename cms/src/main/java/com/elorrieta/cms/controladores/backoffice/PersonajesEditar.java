@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.elorrieta.cms.modelo.Nacionalidad;
+import com.elorrieta.cms.modelo.Ocupacion;
 import com.elorrieta.cms.modelo.Personaje;
+import com.elorrieta.cms.modelo.dao.NacionalidadDAO;
+import com.elorrieta.cms.modelo.dao.OcupacionDAO;
 import com.elorrieta.cms.modelo.dao.PersonajeDAO;
 
 /**
@@ -37,6 +41,9 @@ public class PersonajesEditar extends HttpServlet {
 
 		request.setAttribute("titulo", titulo);
 		request.setAttribute("personaje", p);
+		request.setAttribute("nacionalidades", NacionalidadDAO.getAll());
+		request.setAttribute("ocupaciones", OcupacionDAO.getAll());
+
 		request.getRequestDispatcher("formulario.jsp").forward(request, response);
 	}
 
@@ -50,11 +57,30 @@ public class PersonajesEditar extends HttpServlet {
 		// recoger parametros del formulario
 		int id = Integer.parseInt(request.getParameter("id"));
 		String nombre = request.getParameter("nombre");
+		int vida = Integer.parseInt(request.getParameter("vida"));
+		int mana = Integer.parseInt(request.getParameter("mana"));
+		int defensa = Integer.parseInt(request.getParameter("defensa"));
+		int poderAtaque = Integer.parseInt(request.getParameter("poderAtaque"));
+
+		int idNacionalidad = Integer.parseInt(request.getParameter("idNacionalidad"));
+		int idOcupacion = Integer.parseInt(request.getParameter("idOcupacion"));
 
 		// creamos POJO de Personaje con los datos del formulario
 		Personaje p = new Personaje();
 		p.setId(id);
 		p.setNombre(nombre);
+		p.setVida(vida);
+		p.setMana(mana);
+		p.setDefensa(defensa);
+		p.setPoderAtaque(poderAtaque);
+
+		Nacionalidad n = new Nacionalidad();
+		n.setId(idNacionalidad);
+		p.setNacionalidad(n);
+
+		Ocupacion o = new Ocupacion();
+		o.setId(idOcupacion);
+		p.setOcupacion(o);
 
 		try {
 			if (id == 0) {
@@ -68,11 +94,14 @@ public class PersonajesEditar extends HttpServlet {
 
 		} catch (Exception e) {
 			request.setAttribute("mensajeTipo", "danger");
-			request.setAttribute("mensaje", "Algo ha salido mal");
+			request.setAttribute("mensaje", "Nombre duplicado, inserte de nuevo");
+			e.printStackTrace();
 		}
 
 		request.setAttribute("titulo", "Modificar Personaje");
 		request.setAttribute("personaje", p);
+		request.setAttribute("nacionalidades", NacionalidadDAO.getAll());
+		request.setAttribute("ocupaciones", OcupacionDAO.getAll());
 		request.getRequestDispatcher("formulario.jsp").forward(request, response);
 
 	}

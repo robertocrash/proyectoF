@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 
 			// comprobar el ROL
 			if (Usuario.ROL_ADMIN == usuario.getRol()) {
-				vista = "backoffice/participantes-listar"; // nombre del controlador, no quiero ir a la JSP
+				vista = "backoffice/personajes-listar"; // nombre del controlador, no quiero ir a la JSP
 			} else {
 				vista = "frontoffice/perfil.jsp";
 			}

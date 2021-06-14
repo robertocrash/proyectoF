@@ -1,4 +1,3 @@
-  <em>*** maquetar footer con grid-system de bootstrap, ordenador columunas de 8-4, tablet 6-6, moviles 12-12</em>
 
     <footer class="bg-primary p-2 fixed-bottom">
         <div class="d-flex">

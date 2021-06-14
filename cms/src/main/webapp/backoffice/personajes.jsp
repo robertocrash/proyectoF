@@ -14,7 +14,7 @@
 		    <input type="search" name="filtro"
 		           value="${filtro}" 
 		           class="form-control"		           
-		           placeholder="Nombre, apellidos o email"/>	    
+		           placeholder="Nombre a buscar "/>	    
 		  </div>
 		  <button type="submit" class="btn btn-primary">
 		    <i class="fas fa-search"></i>
@@ -28,7 +28,15 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Ocupacion</th>
+            <th scope="col">Poder de Ataque</th>
+            <th scope="col">Vida</th>
+            <th scope="col">Mana</th>
+            <th scope="col">Defensa</th>
             <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -45,10 +53,18 @@
         
 	        <c:forEach var="pIteracion" items="${personajes}">
 	          <tr>
-	            <th scope="row">${pIteracion.id}</th>
-	            <td>${pIteracion.nombre}</td>
+		            <th scope="row">${pIteracion.id}</th>
+		            <td>${pIteracion.nombre}</td>
+		            <td>${pIteracion.nacionalidad.nombre}</td>
+		            <td>${pIteracion.ocupacion.nombre}</td>
+		            <td>${pIteracion.poderAtaque}</td>
+	             	<td>${pIteracion.vida}</td>
+	             	<td>${pIteracion.mana}</td>
+	             	<td>${pIteracion.defensa}</td>
+	             	
+	             	
 	            <td><a href="backoffice/personajes-editar?id=${pIteracion.id}" class="btn btn-outline-primary">Editar</a></td>
-
+				<td><a onclick="confirmarEliminacion('${pIteracion.nombre}')" class="btn btn-outline-danger" href="backoffice/personajes-eliminar?id=${pIteracion.id}">Eliminar</a></td>
 	          </tr>
 	         </c:forEach> 
 	         
@@ -56,6 +72,20 @@
         </tbody>
       </table>
      
+     <script>
+      	
+      	function confirmarEliminacion(nombre){
+      		
+      		if ( window.confirm("¿ Quieres Eliminar a " + nombre + " ?") ){
+      			console.debug('eliminamos');
+      		}else {
+      			event.preventDefault(); // prevenir que el ancla haga su funcion
+      			console.debug('No Eliminamos');
+      		}
+      		
+      	}
+      
+      </script>
         
 </main> 
 

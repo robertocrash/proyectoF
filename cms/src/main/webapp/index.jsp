@@ -19,7 +19,7 @@
                 <input type="password" 
                        name="contraseina" 
                        id="contraseina"
-                       required 
+                       required
                        class="form-control" 
                        placeholder="Mínimo 4 Máximo 8" >
 
