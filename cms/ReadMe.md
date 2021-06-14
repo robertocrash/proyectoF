@@ -67,4 +67,4 @@ Model Vista Controlador
 - **modelo** Los DAOs se encargan de conectar Java con la bbdd son los encargados de las consultas SQL `src/main/java/com/elorrieta/cms/modelo`
 - **controlador** Controladores o Servlets `src/main/java/com/elorrieta/cms/controladores`
 
-![estructura proyecto]( screenshot5.jpg?raw=true)
+![estructura proyecto]( https://github.com/robertocrash/proyectoF/blob/master/cms/Captura4.PNG)
