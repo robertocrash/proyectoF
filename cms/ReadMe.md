@@ -47,16 +47,15 @@ Al ser un proyecto web necesitamos un servidor de aplicaciones, en nuestro caso 
 
 Podemos navegar por los diferentes enlaces de la cabecera puesto que son públicos, por ejemplo JavaDoc y Calculadora.
 Si queremos entrar a los paneles de Administración deberemos *Iniciar Sesión*.
-Tenemos dos roles diferentes:
+Tenemos un rol de administrador:
 
 1. Administrador   **[admin,admin]** : Permisos Totales para cambiar cualquier participante
-2. Usuario Normal  **[pepe, 12345]** : Solo podemos ver los datos del usuario
 
-#### UI para usuario administrador con rol = 2
+
+#### UI para usuario administrador:
 ![UI para usuario administrador]( screenshot3.jpg?raw=true)
 
-#### UI para usuario normal con rol = 1
-![UI para usuario normal]( screenshot4.jpg?raw=true)
+
 
 ## Estructura Clases del proyecto
 
